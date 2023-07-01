@@ -81,9 +81,9 @@ curl -s https://pastebin.com/raw/UAsAtSNu >> /etc/github/api
 curl -s https://pastebin.com/raw/wt6fU7gs >> /etc/github/email
 curl -s https://pastebin.com/raw/dNNeRxLr >> /etc/github/username
 clear
-APIGIT=$(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)
-EMAILGIT=$(lailafauziyah00@gmail.com)
-USERGIT=$(kuhing)
+APIGIT=$(/etc/github/api)
+EMAILGIT=$(/etc/github/email)
+USERGIT=$(/etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
     echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
         echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
