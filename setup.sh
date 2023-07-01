@@ -86,7 +86,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
     echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
         echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
-    done
+echo -e " done"
     echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
