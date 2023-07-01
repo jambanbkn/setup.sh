@@ -110,7 +110,7 @@ fun_bar() {
     echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
     tput cnorm
 }
-res1() {
+function reg(){
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
 git clone https://github.com/${USERGIT}/ip.git &> /dev/null
