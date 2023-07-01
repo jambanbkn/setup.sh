@@ -1,4 +1,5 @@
 #!/bin/bash
+apt install git -y
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
@@ -80,9 +81,9 @@ curl -s https://pastebin.com/raw/UAsAtSNu >> /etc/github/api
 curl -s https://pastebin.com/raw/wt6fU7gs >> /etc/github/email
 curl -s https://pastebin.com/raw/dNNeRxLr >> /etc/github/username
 clear
-APIGIT=$(cat /etc/github/api)
-EMAILGIT=$(cat /etc/github/email)
-USERGIT=$(cat /etc/github/username)
+APIGIT=$(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)
+EMAILGIT=$(lailafauziyah00@gmail.com)
+USERGIT=$(kuhing)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
     echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
         echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
