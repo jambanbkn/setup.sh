@@ -111,30 +111,20 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-git add .
-git commit -m register &> /dev/null
-git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/ip &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/ip &> /dev/null
-sleep 1
-}
-res2() {
-wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
-clear
-}
-
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
 git clone https://github.com/${USERGIT}/ip.git &> /dev/null
-mkdir /root/ip
 cd /root/ip/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch vps &> /dev/null
-echo "### @Trial $hhari $MYIP " >>vps
-fun_bar 'res1'
-rm -rf /root/ip
-rm -rf /etc/github
+echo "### @Trial $hhari $MYIP" >>/root/ip/vps
+git add .
+git commit -m register &> /dev/null
+git branch -M main &> /dev/null
+git remote add origin https://github.com/${USERGIT}/ip.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git &> /dev/null
+sleep 1
 }
 function domain(){
 fun_bar() {
