@@ -7,9 +7,9 @@ mkdir /etc/github
 touch /etc/github/api
 touch /etc/github/email
 touch /etc/github/username
-echo "api" > /etc/github/api
-echo "email" > /etc/github/email
-echo "username" > /etc/github/username
+echo "api" >> /etc/github/api
+echo "email" >> /etc/github/email
+echo "username" >> /etc/github/username
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
