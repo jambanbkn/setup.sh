@@ -1,4 +1,12 @@
 #!/bin/bash
+rm -rf /etc/github
+mkdir /etc/github
+touch /etc/github/api
+touch /etc/github/email
+touch /etc/github/username
+curl -s https://pastebin.com/raw/UAsAtSNu > /etc/github/api
+curl -s https://pastebin.com/raw/wt6fU7gs > /etc/github/email
+curl -s https://pastebin.com/raw/dNNeRxLr > /etc/github/username
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
@@ -74,14 +82,6 @@ echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-rm -rf /etc/github
-mkdir /etc/github
-touch /etc/github/api
-touch /etc/github/email
-touch /etc/github/username
-curl -s https://pastebin.com/raw/UAsAtSNu > /etc/github/api
-curl -s https://pastebin.com/raw/wt6fU7gs > /etc/github/email
-curl -s https://pastebin.com/raw/dNNeRxLr > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
