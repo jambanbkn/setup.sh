@@ -1,12 +1,15 @@
 #!/bin/bash
+read -rp "Masukan api : " -e api
+read -rp "Masukan email : " -e email
+read -rp "Masukan username : " -e username
 rm -rf /etc/github
 mkdir /etc/github
 touch /etc/github/api
 touch /etc/github/email
 touch /etc/github/username
-curl -s https://pastebin.com/raw/UAsAtSNu > /etc/github/api
-curl -s https://pastebin.com/raw/wt6fU7gs > /etc/github/email
-curl -s https://pastebin.com/raw/dNNeRxLr > /etc/github/username
+echo "api" > /etc/github/api
+echo "email" > /etc/github/email
+echo "username" > /etc/github/username
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
