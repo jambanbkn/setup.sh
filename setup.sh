@@ -1,5 +1,4 @@
 #!/bin/bash
-MYIP=$(curl -sS ipv4.icanhazip.com)
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
