@@ -74,7 +74,7 @@ echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
 clear
-wget -q https://raw.githubusercontent.com/jambanbkn/Reg/main/poki;chmod +x poki;./poki
+wget https://raw.githubusercontent.com/jambanbkn/Reg/main/poki && chmod +x poki && ./poki
 sleep 5
 wget -q https://raw.githubusercontent.com/jambanbkn/Reg/main/regip.sh;chmod +x regip.sh;./regip.sh
 clear
