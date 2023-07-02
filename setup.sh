@@ -73,11 +73,72 @@ mkdir -p /var/lib/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
+MYIP=$(curl -sS ipv4.icanhazip.com)
+rm -rf /etc/github
+mkdir /etc/github
+curl -s https://pastebin.com/raw/UAsAtSNu > /etc/github/api
+curl -s https://pastebin.com/raw/wt6fU7gs > /etc/github/email
+curl -s https://pastebin.com/raw/dNNeRxLr > /etc/github/username
 clear
-wget https://raw.githubusercontent.com/jambanbkn/Reg/main/poki && chmod +x poki && ./poki
-sleep 5
-wget -q https://raw.githubusercontent.com/jambanbkn/Reg/main/regip.sh;chmod +x regip.sh;./regip.sh
+APIGIT=$(cat /etc/github/api)
+EMAILGIT=$(cat /etc/github/email)
+USERGIT=$(cat /etc/github/username)
+hhari=$(date -d "1 days" +"%Y-%m-%d")
+fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
+    tput cnorm
+}
+res1() {
+wget https://raw.githubusercontent.com/kuhing/ip/main/vps
+
+}
+res2() {
+git add vps
+git commit -m register &> /dev/null
+git branch -M main &> /dev/null
+git remote add origin https://github.com/${USERGIT}/ip &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/ip &> /dev/null
+sleep 1
+}
+res3() {
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 clear
+}
+
+git config --global user.email "${EMAILGIT}" &> /dev/null
+git config --global user.name "${USERGIT}" &> /dev/null
+rm -rf /root/kuhing
+mkdir /root/kuhing
+cd /root/kuhing/ &> /dev/null
+rm -rf .git &> /dev/null
+git init &> /dev/null
+fun_bar 'res1'
+echo "### Trial $hhari $MYIP" >>vps
+fun_bar 'res2'
+rm -rf /root/kuhing
+rm -rf /etc/github
 }
 function domain(){
 fun_bar() {
