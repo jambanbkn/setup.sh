@@ -1,5 +1,14 @@
 #!/bin/bash
 apt install git -y
+MYIP=$(curl -sS ipv4.icanhazip.com)
+rm -rf /etc/github
+mkdir /etc/github
+touch /etc/github/api
+touch /etc/github/email
+touch /etc/github/username
+echo "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" >> /etc/github/api
+echo "lailafauziyah00@gmail.com" >> /etc/github/email
+echo "kuhing" >> /etc/github/username
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
@@ -74,12 +83,6 @@ mkdir -p /var/lib/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
-MYIP=$(curl -sS ipv4.icanhazip.com)
-rm -rf /etc/github
-mkdir /etc/github
-curl -s https://pastebin.com/raw/UAsAtSNu >> /etc/github/api
-curl -s https://pastebin.com/raw/wt6fU7gs >> /etc/github/email
-curl -s https://pastebin.com/raw/dNNeRxLr >> /etc/github/username
 clear
 APIGIT=$(/etc/github/api)
 EMAILGIT=$(/etc/github/email)
@@ -102,7 +105,7 @@ git commit -m register &> /dev/null
 git branch -M main &> /dev/null
 git remote add origin https://github.com/${USERGIT}/ip.git &> /dev/null
 git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git &> /dev/null
-sleep 1
+sleep 5
 }
 function domain(){
 fun_bar() {
