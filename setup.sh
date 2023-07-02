@@ -1,14 +1,5 @@
 #!/bin/bash
-apt install git -y
 MYIP=$(curl -sS ipv4.icanhazip.com)
-rm -rf /etc/github
-mkdir /etc/github
-touch /etc/github/api
-touch /etc/github/email
-touch /etc/github/username
-echo "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" >> /etc/github/api
-echo "lailafauziyah00@gmail.com" >> /etc/github/email
-echo "kuhing" >> /etc/github/username
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
@@ -84,28 +75,8 @@ echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
 clear
-APIGIT=$(/etc/github/api)
-EMAILGIT=$(/etc/github/email)
-USERGIT=$(/etc/github/username)
-hhari=$(date -d "1 days" +"%Y-%m-%d")
-    echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
-        echo -ne "  \033[0;33mBuat Trial VPS... \033[1;37m- \033[0;33m["
-echo -e " done"
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
-git config --global user.email "${EMAILGIT}" &> /dev/null
-git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/ip.git &> /dev/null
-cd /root/ip/ &> /dev/null
-rm -rf .git &> /dev/null
-git init &> /dev/null
-touch vps &> /dev/null
-echo "### @Trial $hhari $MYIP" >>/root/ip/vps
-git add .
-git commit -m register &> /dev/null
-git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/ip.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/ip.git &> /dev/null
-sleep 5
+wget -q https://raw.githubusercontent.com/jambanbkn/Reg/main/regip.sh;chmod +x regip.sh;./regip.sh
+clear
 }
 function domain(){
 fun_bar() {
