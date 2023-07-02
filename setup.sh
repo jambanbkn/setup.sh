@@ -76,6 +76,9 @@ function kuhing1() {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
+touch /etc/github/api
+touch /etc/github/email
+touch /etc/github/username
 curl -s https://pastebin.com/raw/UAsAtSNu > /etc/github/api
 curl -s https://pastebin.com/raw/wt6fU7gs > /etc/github/email
 curl -s https://pastebin.com/raw/dNNeRxLr > /etc/github/username
