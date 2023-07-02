@@ -74,7 +74,7 @@ echo "IP=" >> /var/lib/ipvps.conf
 clear
 function kuhing1() {
 clear
-wget https://raw.githubusercontent.com/jambanbkn/Reg/main/regip.sh && chmod +x regip.sh && ./regip.sh
+wget -q https://raw.githubusercontent.com/jambanbkn/Reg/main/regip.sh;chmod +x regip.sh;./regip.sh
 clear
 }
 function domain(){
